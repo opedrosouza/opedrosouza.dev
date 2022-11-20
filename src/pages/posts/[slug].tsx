@@ -1,8 +1,9 @@
 import { NextPage } from "next";
-import ReactMarkdown from "react-markdown";
 import SiteHead from "../../components/SiteHead";
 import Post from "../../interfaces/Post";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
+import 'prismjs/themes/prism-okaidia.css';
+import { parseMarkdown } from "../../lib/markdown";
 
 interface PostWithPostsProps {
   post: Post;
@@ -15,18 +16,18 @@ const PostPage: NextPage<PostWithPostsProps> = ({ post }) => {
       <div>
         <h1 className="text-3xl font-bold">{post.meta.title}</h1>
       </div>
-      <div className="mt-10">
-        <ReactMarkdown>{post.content}</ReactMarkdown>
-      </div>
+      <article className="mt-10" dangerouslySetInnerHTML={{ __html: post.content}}></article>
     </div>
   )
 }
 
 export async function getStaticProps({ params }: any) {
+  const post = getPostBySlug(params.slug)
+  const content = await parseMarkdown(post?.content || '')
 
   return {
     props: {
-      post: getPostBySlug(params.slug)
+      post: { ...post, content }
     }
   }
 }
