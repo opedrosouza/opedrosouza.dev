@@ -1,18 +1,36 @@
 import SiteHead from "../SiteHead";
+import Navbar from "../Narbar";
+import Logo from "../Logo";
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const links = [
+    {
+      title: "Home",
+      href: "/",
+    },
+    {
+      title: "Posts",
+      href: "/posts",
+    }
+  ]
+
   return (
     <>
       <SiteHead />
-      <div className="flex flex-col items-center justify-center min-h-screen py-2">
-        <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-          {children}
-        </main>
-      </div>
+      <header className="content flex justify-between items-center py-4">
+        <Logo />
+        <Navbar links={links} />
+      </header>
+      <main className="">
+        {children}
+      </main>
+      <footer className="text-center fixed bottom-0 inset-x-0">
+        <h4>Feito com amor</h4>
+      </footer>
     </>
   );
 };
