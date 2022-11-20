@@ -38,3 +38,7 @@ export function getAllPosts() {
 
   return posts;
 }
+
+export function getLastPosts(count: number) {
+  return getAllPosts().slice(0, count);
+}

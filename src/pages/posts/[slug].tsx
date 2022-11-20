@@ -12,15 +12,9 @@ interface PostWithPostsProps {
 const Post: NextPage<PostWithPostsProps> = ({ post }) => {
   return (
     <div className="content mt-10">
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <h1 className="text-4xl font-bold">Pedro Souza</h1>
-          <h2 className="text-2xl font-thin">Desenvolvedor Fullstack</h2>
-          <p className="text-xl font-thin mt-3">Ajudo desenvolvedores a aprenderem a programar e solucionar problemas de forma divertida</p>
-        </div>
-        <div></div>
+      <div>
+        <h1 className="text-3xl font-bold">{post.meta.title}</h1>
       </div>
-
       <div className="mt-10">
         <ReactMarkdown>{post.content}</ReactMarkdown>
       </div>
