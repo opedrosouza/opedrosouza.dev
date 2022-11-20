@@ -1,4 +1,3 @@
-import SiteHead from "../SiteHead";
 import Navbar from "../Narbar";
 import Logo from "../Logo";
 
@@ -20,7 +19,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      <SiteHead />
       <header className="content flex justify-between items-center py-4">
         <Logo />
         <Navbar links={links} />

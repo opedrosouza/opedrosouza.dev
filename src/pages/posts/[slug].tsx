@@ -1,17 +1,17 @@
 import { NextPage } from "next";
-import Link from "next/link";
 import ReactMarkdown from "react-markdown";
+import SiteHead from "../../components/SiteHead";
 import Post from "../../interfaces/Post";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
-import { timeToRead } from "../../lib/utils";
 
 interface PostWithPostsProps {
   post: Post;
 }
 
-const Post: NextPage<PostWithPostsProps> = ({ post }) => {
+const PostPage: NextPage<PostWithPostsProps> = ({ post }) => {
   return (
     <div className="content mt-10">
+      <SiteHead pageTitle={post.meta.title}/>
       <div>
         <h1 className="text-3xl font-bold">{post.meta.title}</h1>
       </div>
@@ -41,4 +41,4 @@ export async function getStaticPaths() {
   }
 }
 
-export default Post
+export default PostPage;

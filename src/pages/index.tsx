@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import PostCard from "../components/PostCard";
 import Post from "../interfaces/Post";
 import { getLastPosts } from "../lib/api";
 
@@ -27,16 +28,16 @@ const Home: NextPage<HomeWithPostsProps> = ({ posts }) => {
           />
         </div>
       </div>
-
-      <div className="mt-10">
-        {posts.map((post: Post) => (
-          <li key={post.slug}>
-            <Link href={`posts/${post.slug}`}>
-              {post.meta.title} | {post.meta.category} - {post.meta.date}
+      <section>
+        <h2 className="text-2xl font-bold mt-10 mb-5">Últimos posts</h2>
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-3 lg:grid-cols-3 lg:gap-4">
+          {posts.map((post: Post) => (
+            <Link href={`posts/${post.slug}`} key={post.slug}>
+              <PostCard post={post}/>
             </Link>
-          </li>
-        ))}
-      </div>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }

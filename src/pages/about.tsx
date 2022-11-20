@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 
-
 const About: NextPage = () => {
   return (
     <div className="content mt-10">
