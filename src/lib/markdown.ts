@@ -10,7 +10,7 @@ export async function parseMarkdown(content: string) {
     const processedContent = await unified()
         .use(remarkParse)
         .use(remarkPrism, {
-          plugins: ['line-numbers'],
+          plugins: [],
         })
         .use(remarkRehype, { allowDangerousHtml: true })
         .use(rehypeRaw)

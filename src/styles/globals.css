@@ -9,11 +9,10 @@
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    @apply bg-gray-900 text-gray-100;
   }
+}
 
-  pre {
-    @apply font-mono;
-  }
+pre > code {
+  @apply font-mono !important;
 }

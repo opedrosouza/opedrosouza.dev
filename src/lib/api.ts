@@ -4,7 +4,7 @@ import { join } from "path";
 import fs from "fs";
 
 import { format } from "date-fns";
-import { ptBR } from "date-fns/locale";
+import { pt } from "date-fns/locale";
 
 const postsDirectory = join(process.cwd(), "posts");
 
@@ -16,7 +16,7 @@ export function getPostBySlug(slug: string) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  const date = format(new Date(), "dd MMM yyyy", { locale: ptBR });
+  const date = format(new Date(), "dd MMM yyyy", { locale: pt });
 
   return {
     slug: realSlug,
@@ -24,6 +24,9 @@ export function getPostBySlug(slug: string) {
     meta: {
       title: data.title,
       category: data.category,
+      excerpt: data.excerpt,
+      author: data.author,
+      author_avatar_url: data.author_avatar_url,
       date
     } as PostMeta,
     content
