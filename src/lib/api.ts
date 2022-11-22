@@ -2,9 +2,7 @@ import Post, { PostMeta } from "../interfaces/Post";
 import matter from "gray-matter";
 import { join } from "path";
 import fs from "fs";
-
-import { format } from "date-fns";
-import { pt } from "date-fns/locale";
+import { toFormattedDate } from "./utils";
 
 const postsDirectory = join(process.cwd(), "posts");
 
@@ -15,8 +13,6 @@ export function getPostBySlug(slug: string) {
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
-
-  const date = format(new Date(), "dd MMM yyyy", { locale: pt });
 
   return {
     slug: realSlug,
@@ -29,7 +25,7 @@ export function getPostBySlug(slug: string) {
       author: data.author,
       author_avatar_url: data.author_avatar_url,
       languages: data.languages,
-      date
+      date: toFormattedDate(data.date),
     } as PostMeta,
     content
   } as Post
@@ -39,7 +35,7 @@ export function getAllPosts() {
   const slugs = fs.readdirSync(postsDirectory);
   const posts = slugs
     .map(slug => getPostBySlug(slug))
-    .sort((post1, post2) => ((post1?.date as string) > (post2?.date as string) ? -1 : 1));
+    .sort((post1, post2) => (new Date(post1?.date as string) > new Date(post2?.date as string) ? -1 : 1));
 
   return posts;
 }

@@ -6,7 +6,7 @@ import { getAllPosts, getPostBySlug } from "../../lib/api";
 import 'prismjs/themes/prism-okaidia.css';
 import { parseMarkdown } from "../../lib/markdown";
 import styles from "./post.module.css";
-import { timeToRead } from "../../lib/utils";
+import { timeToRead, toFormattedDate } from "../../lib/utils";
 
 interface PostWithPostsProps {
   post: Post;
@@ -40,7 +40,7 @@ const PostPage: NextPage<PostWithPostsProps> = ({ post }) => {
               <Image src={post.meta.author_avatar_url as string} alt={post.meta.author} width={30} height={30} className="rounded-full" />
               <h3 className="ml-2">{post.meta.author}</h3>
               <span className="mx-2"> - </span>
-              <span>{new Date(post.date).toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric'})}</span>
+              <span>{toFormattedDate(post.date)}</span>
             </div>
             <div>
               <span>{timeToRead(post.content)}</span>

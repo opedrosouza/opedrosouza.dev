@@ -1,5 +1,6 @@
 import Navbar from "../Narbar";
 import Logo from "../Logo";
+import Footer from "../Footer";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -26,9 +27,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main className="">
         {children}
       </main>
-      <footer className="text-center fixed bottom-0 inset-x-0">
-        <h4>Feito com amor</h4>
-      </footer>
+      <Footer />
     </>
   );
 };

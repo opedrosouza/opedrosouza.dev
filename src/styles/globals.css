@@ -20,3 +20,7 @@ html {
 pre > code {
   @apply font-mono !important;
 }
+
+a {
+  @apply hover:underline;
+}
