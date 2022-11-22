@@ -9,29 +9,37 @@
 }
 
 .content h1, .content * h1 {
-  @apply text-4xl font-bold leading-10 mb-2;
+  @apply text-4xl font-bold leading-10 mb-4;
 }
 
 .content h2, .content * h2 {
-  @apply text-3xl font-bold leading-9 mb-2;
+  @apply text-3xl font-bold leading-9 mb-4;
 }
 
 .content h3, .content * h3 {
-  @apply text-2xl font-bold leading-8 mb-2;
+  @apply text-2xl font-bold leading-8 mb-4;
 }
 
 .content h4, .content * h4 {
-  @apply text-xl font-bold leading-8 mb-2;
+  @apply text-xl font-bold leading-8 mb-4;
 }
 
-.content h5, .content * h5 {
-  @apply text-lg font-bold leading-8 mb-2;
+.content h5, .content * h5, .content h6, .content * h6 {
+  @apply text-lg font-bold leading-8 mb-4;
+}
+
+.content h, .content * h5 {
+  @apply text-lg font-bold leading-8 mb-4;
 }
 
 .content p, .content * p {
-  @apply text-lg leading-normal mb-2;
+  @apply text-lg leading-normal mb-4;
 }
 
 .content pre, .content * pre {
   @apply text-lg font-mono my-4 shadow;
+}
+
+.content img, .content * img {
+  @apply max-w-full rounded-lg;
 }

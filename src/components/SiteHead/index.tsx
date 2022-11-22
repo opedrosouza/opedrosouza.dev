@@ -5,7 +5,7 @@ interface SiteHeadProps {
   pageTitle?: string;
 }
 
-const SiteHead: React.FC<SiteHeadProps> = ({ title = 'opedrosouza', pageTitle }) => {
+const SiteHead: React.FC<SiteHeadProps> = ({ title = 'Pedro Souza', pageTitle }) => {
   const mountTitle = pageTitle ? `${pageTitle} | ${title}` : title;
   return (
     <Head>

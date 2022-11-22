@@ -2,9 +2,11 @@
 title: Hello 2
 excerpt: Test2
 date: 2022-11-20 00:00:00
-category: development
 author: Pedro Souza
-author_avatar_url: /images/pedro.png
+author_avatar_url: /images/pedro.pngw
+category: development
+category_color: yellow-500
+languages: [ruby]
 ---
 
 Olá terraquios

@@ -35,7 +35,7 @@ const PostPage: NextPage<PostWithPostsProps> = ({ post }) => {
         <div className={styles.header}>
           <h1>{post.meta.title}</h1>
           <h2>{post.meta.excerpt}</h2>
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between my-4 text-gray-400 space-y-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between my-6 text-gray-400 space-y-4">
             <div className="flex items-center">
               <Image src={post.meta.author_avatar_url as string} alt={post.meta.author} width={30} height={30} className="rounded-full" />
               <h3 className="ml-2">{post.meta.author}</h3>

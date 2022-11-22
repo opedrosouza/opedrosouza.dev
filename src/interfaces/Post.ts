@@ -12,4 +12,6 @@ export interface PostMeta {
   excerpt?: string;
   author: string;
   author_avatar_url?: string;
+  category_color?: string;
+  languages?: string[];
 }

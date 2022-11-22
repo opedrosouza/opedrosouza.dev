@@ -24,9 +24,11 @@ export function getPostBySlug(slug: string) {
     meta: {
       title: data.title,
       category: data.category,
+      category_color: data.category_color,
       excerpt: data.excerpt,
       author: data.author,
       author_avatar_url: data.author_avatar_url,
+      languages: data.languages,
       date
     } as PostMeta,
     content
@@ -44,4 +46,10 @@ export function getAllPosts() {
 
 export function getLastPosts(count: number) {
   return getAllPosts().slice(0, count);
+}
+
+export function getPostsByCategory(category: string, count = 10) {
+  if (!category) return null;
+
+  return getAllPosts().filter(post => post?.meta.category == category).slice(0, count);
 }
