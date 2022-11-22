@@ -11,15 +11,21 @@ interface PostsWithPostsProps {
 const Posts: NextPage<PostsWithPostsProps> = ({ posts }) => {
   return (
     <div className="content mt-10">
-      <div className="mt-10">
+      <ul className="mt-10">
         {posts.map((post: Post) => (
-          <li key={post.slug}>
-            <Link href={`posts/${post.slug}`}>
-              {post.meta.title} | {post.meta.category} - {post.meta.date} - {timeToRead(post.content)}
+          <li key={post.slug} className="mb-4 pb-5 border-b border-gray-100 last:border-none">
+            <Link href={`posts/${post.slug}`} className="hover:no-underline hover:text-gray-300">
+              <div>
+                <div className="grid grid-cols-4 mb-2">
+                  <h2 className="text-2xl font-bold mr-5 col-span-3">{post.meta.title}</h2>
+                  <span className="text-right">{timeToRead(post.content)}</span>
+                </div>
+                <p className="text-lg">{post.meta.excerpt}</p>
+              </div>
             </Link>
           </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }

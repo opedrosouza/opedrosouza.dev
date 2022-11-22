@@ -24,7 +24,7 @@ const Home: NextPage<HomeWithPostsProps> = ({ posts }) => {
             alt="Pedro Souza"
             width={150}
             height={150}
-            className="rounded-full"
+            className="rounded-full grayscale"
           />
         </div>
       </div>
@@ -32,7 +32,7 @@ const Home: NextPage<HomeWithPostsProps> = ({ posts }) => {
         <h2 className="text-4xl font-bold">Últimos posts</h2>
         <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-3 lg:grid-cols-3 lg:gap-4 my-5">
           {posts.map((post: Post) => (
-            <Link href={`posts/${post.slug}`} key={post.slug} className="block h-full hover:no-underline">
+            <Link href={`posts/${post.slug}`} key={post.slug} className="block h-full hover:no-underline hover:scale-105 transition-all ease-linear">
               <PostCard post={post}/>
             </Link>
           ))}

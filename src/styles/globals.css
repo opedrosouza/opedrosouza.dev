@@ -22,5 +22,5 @@ pre > code {
 }
 
 a {
-  @apply hover:underline;
+  @apply hover:underline underline-offset-4;
 }
