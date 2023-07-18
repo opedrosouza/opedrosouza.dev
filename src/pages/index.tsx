@@ -15,8 +15,8 @@ const Home: NextPage<HomeWithPostsProps> = ({ posts }) => {
       <div className="flex flex-row items-center justify-between">
         <div className="mr-20">
           <h1 className="text-post-title font-bold">Pedro Souza</h1>
-          <h2 className="text-2xl font-thin">Engenheiro de Software Fullstack</h2>
-          <p className="text-xl font-thin mt-3">Ajudo desenvolvedores a aprenderem a programar e solucionar problemas de forma divertida</p>
+          <h2 className="text-2xl font-thin">Engenheiro de Software</h2>
+          <p className="text-lg font-thin text-gray-300">Apenas um programador compartilhando um pouco das loucuras do dia a dia.</p>
         </div>
         <div className="hidden lg:block">
           <Image

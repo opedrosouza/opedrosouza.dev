@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="pt-10 pb-5 grid grid-cols-3">
         <div>
           <h2 className="text-2xl font-bold mb-4">Pedro Souza</h2>
-          <p className="text-lg font-thin mt-3">Ajudo desenvolvedores a aprenderem a programar e solucionar problemas de forma divertida</p>
+          <p className="text-lg font-thin mt-3">Apenas um programador compartilhando um pouco das loucuras do dia a dia.</p>
         </div>
         <div>
           <h2 className="text-2xl font-bold mb-4">Links</h2>
@@ -27,13 +27,16 @@ const Footer: React.FC = () => {
           <h2 className="text-2xl font-bold mb-4">Veja Também</h2>
           <ul>
             <li>
-              <Link href="/">Github</Link>
+              <Link href="https://github.com/opedrosouza" target="_blank" title="Github Profile">Github</Link>
             </li>
             <li>
-              <Link href="/posts">Youtube</Link>
+              <Link href="https://www.youtube.com/@opedrosouzadev" target="_blank" title="Youtube Channel">Youtube</Link>
             </li>
             <li>
-              <Link href="/about">Instagram</Link>
+              <Link href="https://instagram.com/opedrosouza.dev" target="_blank" title="Instagram Profile">Instagram</Link>
+            </li>
+            <li>
+              <Link href="https://linkedin.com/in/opedrosouza" target="_blank" title="LinkedIn Profile">LinkedIn</Link>
             </li>
           </ul>
         </div>
